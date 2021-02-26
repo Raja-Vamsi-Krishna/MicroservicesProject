@@ -1,4 +1,4 @@
-package io.vamsilearnings.moviecatlogservice.entity;
+package io.vamsilearnings.moviecatlogservice.model;
 
 public class CatalogItem {
 

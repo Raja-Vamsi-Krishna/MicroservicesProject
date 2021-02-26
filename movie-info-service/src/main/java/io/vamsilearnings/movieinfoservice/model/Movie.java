@@ -1,4 +1,4 @@
-package io.vamsilearnings.movieinfoservice.entity;
+package io.vamsilearnings.movieinfoservice.model;
 
 public class Movie {
 	private String movieId;

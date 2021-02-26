@@ -1,9 +1,9 @@
 package io.vamsilearnings.movieinfoservice.controller;
-import  io.vamsilearnings.movieinfoservice.entity.Movie;
-
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import io.vamsilearnings.movieinfoservice.model.Movie;
 
 @RestController
 @RequestMapping("/movies")

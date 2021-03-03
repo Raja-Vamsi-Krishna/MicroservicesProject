@@ -22,8 +22,11 @@ public class MovieCatlogResource {
 	
     @Autowired
 	private RestTemplate resttemplate;
-//	@Autowired
-//	private WebClient.Builder webclientbuilder;
+
+	/*
+	 * @Autowired
+	 *  private WebClient.Builder webclientbuilder;
+	 */
 	@RequestMapping("/{id}")
 
 	public List<CatalogItem> getCatalog(@PathVariable("id") String userId){
@@ -40,15 +43,13 @@ public class MovieCatlogResource {
 			Movie movie=resttemplate
 					   .getForObject("http://movie-info-service/movies/"+rating.getMovieId(), Movie.class);
 			
-		
-//			Movie movie=webclientbuilder.build()
-//			.get()
-//			.uri("http://localhost:8082/movies/"+rating.getMovieId())
-//			.retrieve()
-//			.bodyToMono(Movie.class)
-//			.block();
-			
-			
+			/*
+			 *  ============using WEB Client======================== 
+			 *  Movie movie=webclientbuilder.build()  .get() 
+			 * .uri("http://localhost:8082/movies/"+rating.getMovieId())  .retrieve() 
+			 * .bodyToMono(Movie.class)  .block();
+			 * 
+			 */
 			
 			//put all them together
 

@@ -33,12 +33,12 @@ public class MovieCatlogResource {
 //		List<Rating> ratings=Arrays.asList(new Rating("12345",4)
 //                ,new Rating("56789",5));
 		UserRating ratings= resttemplate.
-                   getForObject("http://localhost:8083/ratingsdata/users/"+userId, UserRating.class);	
+                   getForObject("http://ratings-data-service/ratingsdata/users/"+userId, UserRating.class);	
 		return ratings.getUserRating().stream().map(rating->{
 			//for each movie id call movie info service and get details
 
 			Movie movie=resttemplate
-					   .getForObject("http://localhost:8082/movies/"+rating.getMovieId(), Movie.class);
+					   .getForObject("http://movie-info-service/movies/"+rating.getMovieId(), Movie.class);
 			
 		
 //			Movie movie=webclientbuilder.build()
@@ -52,7 +52,7 @@ public class MovieCatlogResource {
 			
 			//put all them together
 
-			return new CatalogItem(movie.getName(),"movie description",rating.getRating());
+			return new CatalogItem(movie.getName(),movie.getOverview(),rating.getRating());
 					})
 					.collect(Collectors.toList());
 		
